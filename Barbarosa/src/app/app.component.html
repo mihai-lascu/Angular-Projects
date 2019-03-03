@@ -1,21 +1,46 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <title>Barbarosa Dice Game</title>
+</head>
+
+<body>
+
+<div class="wrapper clearfix">
+  <div class="player-0-panel active">
+    <div class="player-name" id="name-0">Player 1</div>
+    <div class="player-score" id="score-0">0</div>
+    <div class="player-current-box">
+      <div class="player-current-label">Current</div>
+      <div class="player-current-score" id="current-0">0</div>
+    </div>
+  </div>
+
+  <div class="player-1-panel">
+    <div class="player-name" id="name-1">Player 2</div>
+    <div class="player-score" id="score-1">0</div>
+    <div class="player-current-box">
+      <div class="player-current-label">Current</div>
+      <div class="player-current-score" id="current-1">0</div>
+    </div>
+  </div>
+
+  <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+  <!--<input class="final-score" type="text" placeholder="Final score: 1000">-->
+  <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
+  <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
+
+  <img src="../assets/dice-1.png" alt="Dice" class="dice" id="dice-1">
+  <img src="../assets/dice-2.png" alt="Dice" class="dice" id="dice-2">
+  <img src="../assets/dice-3.png" alt="Dice" class="dice" id="dice-3">
+  <img src="../assets/dice-4.png" alt="Dice" class="dice" id="dice-4">
+  <img src="../assets/dice-5.png" alt="Dice" class="dice" id="dice-5">
+
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+</body>
+</html>
 
 <router-outlet></router-outlet>
