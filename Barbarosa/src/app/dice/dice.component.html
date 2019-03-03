@@ -1,0 +1,7 @@
+<div *ngIf="init === true">
+  <button class="btn-roll" (click)='roll()'><i class="ion-ios-loop"></i>Roll dice</button>
+  <div *ngFor="let dice of diceArr">
+    <img [src]="dice.image" alt="Dice" class="dice" [id]="dice.id">
+  </div>
+</div>
+

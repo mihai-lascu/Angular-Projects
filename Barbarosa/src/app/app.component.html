@@ -28,16 +28,10 @@
     </div>
   </div>
 
-  <button class="btn-new"><i class="ion-ios-plus-outline"></i>New game</button>
+  <button class="btn-new" (click)="startNewGame()"><i class="ion-ios-plus-outline"></i>New game</button>
   <!--<input class="final-score" type="text" placeholder="Final score: 1000">-->
-  <button class="btn-roll"><i class="ion-ios-loop"></i>Roll dice</button>
   <button class="btn-hold"><i class="ion-ios-download-outline"></i>Hold</button>
-
-  <img src="../assets/dice-1.png" alt="Dice" class="dice" id="dice-1">
-  <img src="../assets/dice-2.png" alt="Dice" class="dice" id="dice-2">
-  <img src="../assets/dice-3.png" alt="Dice" class="dice" id="dice-3">
-  <img src="../assets/dice-4.png" alt="Dice" class="dice" id="dice-4">
-  <img src="../assets/dice-5.png" alt="Dice" class="dice" id="dice-5">
+  <dice [init] = 'init' ></dice>
 
 </div>
 </body>
