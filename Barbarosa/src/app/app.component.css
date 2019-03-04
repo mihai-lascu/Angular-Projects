@@ -156,3 +156,37 @@ i {
 
 .winner { background-color: #f7f7f7; }
 .winner .player-name { font-weight: 300; color: #EB4D4D; }
+
+
+#dice-1 {
+  top: 130px;
+  transform: translateX(-120%);
+}
+
+#dice-2 {
+  top: 290px;
+  transform: translateX(-120%);
+}
+
+#dice-3 {
+  top: 210px;
+}
+
+#dice-4 {
+  top: 130px;
+  transform: translateX(+20%);
+}
+
+#dice-5 {
+  top: 290px;
+  transform: translateX(+20%);
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 178px;
+  transform: translateX(-50%);
+  height: 70px;
+  box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+}
