@@ -1,13 +1,19 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {iExpense} from "./expense.model";
 
 @Component({
   selector: 'expense',
   templateUrl: './expense.component.html',
-  styleUrls: ['./expense.component.css']
+  styleUrls: ['./expense.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ExpenseComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  private expensesArr: Array<iExpense>;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

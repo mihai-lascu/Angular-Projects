@@ -1,3 +1,16 @@
-<p>
-  expense works!
-</p>
+<div class="expenses">
+  <h2 class="expenses__title">Expenses</h2>
+  <div *ngFor="let expense of expensesArr" class="expenses__list">
+    <div class="item clearfix" id="exp-{{expense.id}}">
+      <div class="item__description">{{expense.description}}</div>
+      <div class="right clearfix">
+        <div class="item__value">{{expense.value}}</div>
+        <div class="item__percentage">{{expense.percentage}}%</div>
+        <div class="item__delete">
+          <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

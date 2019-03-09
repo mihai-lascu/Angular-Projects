@@ -1,3 +1,20 @@
-<p>
-  income works!
-</p>
+<div class="income">
+  <h2 class="icome__title">Income</h2>
+  <div *ngFor="let income of incomesArr" class="income__list">
+    <div class="item clearfix" id="inc-{{income.id}}">
+      <div class="item__description">{{income.description}}</div>
+      <div class="right clearfix">
+        <div class="item__value">{{income.value}}</div>
+        <div class="item__delete">
+          <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
