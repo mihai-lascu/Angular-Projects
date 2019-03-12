@@ -6,7 +6,7 @@
       <div class="right clearfix">
         <div class="item__value">{{income.value}}</div>
         <div class="item__delete">
-          <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+          <button (click)="deleteItem(income.id)" class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
         </div>
       </div>
     </div>

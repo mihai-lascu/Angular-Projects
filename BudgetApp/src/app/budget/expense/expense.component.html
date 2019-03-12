@@ -7,7 +7,7 @@
         <div class="item__value">{{expense.value}}</div>
         <div class="item__percentage">{{expense.percentage}}%</div>
         <div class="item__delete">
-          <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
+          <button (click)="deleteItem(expense.id)" class="item__delete--btn"><i class="ion-ios-close-outline"></i></button>
         </div>
       </div>
     </div>

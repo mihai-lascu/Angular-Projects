@@ -3,6 +3,7 @@ import {iBudget} from "./budget/budget.model";
 import {BUDGET} from "./budget/budget.data";
 import {iIncome} from "./budget/income/income.model";
 import {iExpense} from "./budget/expense/expense.model";
+import {PercentageService} from "./percentage.service";
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,11 @@ export class AppComponent {
   private budget: iBudget;
   private newIncome: iIncome;
   private newExpense: iExpense;
+  private description: string;
+  private value: number;
+  private type: string;
 
-  constructor() {
+  constructor(private percentageService: PercentageService) {
     this.budget = BUDGET;
     this.newIncome = {};
     this.newExpense = {};
@@ -34,62 +38,48 @@ export class AppComponent {
     return `${months[month]} ${year}`
   }
 
-  keyPress(event: any, value: string, description: string, type: string) {
+  keyPress(event: any) {
     if (event.key === "Enter") {
-      this.addItem(value, description, type);
+      this.addItem();
     }
   }
 
-  addItem(value: string, description: string, type: string) {
-    if (description !== "" && !isNaN(parseInt(value)) && parseInt(value) > 0) {
-      if (type === 'inc') {
-        this.addIncome(parseInt(value), description);
+  addItem() {
+    if (this.description !== "" && !isNaN(this.value) && this.value > 0) {
+      if (this.type === 'inc') {
+        this.addIncome();
       } else {
-        this.addExpense(parseInt(value), description);
+        this.addExpense();
       }
     }
   }
 
-  addIncome(value: number, description: string) {
+  addIncome() {
     if (this.budget.incomes.length > 0) {
       this.newIncome.id = this.budget.incomes[this.budget.incomes.length - 1].id + 1;
     } else {
       this.newIncome.id = 0;
     }
-    this.newIncome.description = description;
-    this.newIncome.value = value;
+    this.newIncome.description = this.description;
+    this.newIncome.value = this.value;
 
     this.budget.incomes.push(this.newIncome);
+    this.percentageService.updatePercentages();
     this.newIncome = {};
-
-    this.updatePercentages();
   }
 
-  addExpense(value: number, description: string) {
+  addExpense() {
     if (this.budget.expenses.length > 0) {
       this.newExpense.id = this.budget.expenses[this.budget.expenses.length - 1].id + 1;
     } else {
       this.newExpense.id = 0;
     }
-    this.newExpense.description = description;
-    this.newExpense.value = value;
+    this.newExpense.description = this.description;
+    this.newExpense.value = this.value;
     this.newExpense.percentage = -1;
 
     this.budget.expenses.push(this.newExpense);
+    this.percentageService.updatePercentages();
     this.newExpense = {};
-
-    this.updatePercentages();
-  }
-
-  updatePercentages() {
-    let totalInc = 0;
-    this.budget.incomes.forEach(current => totalInc += current.value);
-    this.budget.expenses.forEach(current => {
-      if (totalInc > 0) {
-        current.percentage = Math.round((current.value / totalInc) * 100);
-      } else {
-        current.percentage = -1;
-      }
-    })
   }
 }

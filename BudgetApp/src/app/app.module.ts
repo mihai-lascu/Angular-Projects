@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {BudgetComponent} from './budget/budget.component';
 import {IncomeComponent} from './budget/income/income.component';
 import {ExpenseComponent} from './budget/expense/expense.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import {ExpenseComponent} from './budget/expense/expense.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
