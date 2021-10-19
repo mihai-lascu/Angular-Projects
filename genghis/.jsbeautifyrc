@@ -1,0 +1,7 @@
+{
+    "indent_size": 4,
+    "wrap_line_length": 180,
+    "language": {
+        "html": ["html"]
+    }
+}
