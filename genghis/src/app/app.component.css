@@ -1,4 +1,4 @@
-.app-container {
+.container {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
@@ -7,9 +7,27 @@
 	left: 0;
 	right: 0;
 }
-.app-toolbar {
+
+.toolbar {
 	display: flex;
 	justify-content: space-between;
-	position: fixed;
 	z-index: 2;
+}
+
+.is-mobile .app-toolbar {
+	z-index: 2;
+  }
+
+.is-mobile .app-sidenav-container {
+	flex: 1 0 auto;
+}
+
+.sidenav-container {
+	flex: 1;
+	background-color: #fff;
+}
+
+mat-sidenav {
+	width: 250px;
+	height: 100%;
 }
