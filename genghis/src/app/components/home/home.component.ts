@@ -9,4 +9,8 @@ export class HomeComponent implements OnInit {
 	constructor() {}
 
 	ngOnInit(): void {}
+
+	onSearchEvent(searchValues: any) {
+		console.log(searchValues)
+	}
 }
