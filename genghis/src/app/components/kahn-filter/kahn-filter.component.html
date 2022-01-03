@@ -3,7 +3,7 @@
         <mat-form-field class='form-field'>
             <mat-label>County</mat-label>
             <mat-select formControlName='county'>
-                <mat-option *ngFor='let county of counties$ | async' [value]='county.auto'>{{county.name}}</mat-option>
+                <mat-option *ngFor='let county of counties$ | async' [value]='county.name'>{{county.name}}</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field class='form-field'>
@@ -16,6 +16,6 @@
             <mat-label>Filter</mat-label>
             <input formControlName='search' matInput />
         </mat-form-field>
-        <button (click)='onSearchClick()' mat-button type='button'>Search</button>
+        <button (click)='onSearchClick()' mat-button type='submit'>Search</button>
     </form>
 </div>

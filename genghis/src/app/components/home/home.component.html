@@ -1,4 +1,6 @@
 <div class="container">
     <kahn-filter (searchEvent)='onSearchEvent($event)'></kahn-filter>
-    <kahn-card></kahn-card>
+    <div class="card-wrapper">
+        <kahn-card *ngFor='let kahnCard of kahnCards' [kahnCard]='kahnCard'></kahn-card>
+    </div>
 </div>

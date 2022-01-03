@@ -2,27 +2,22 @@
     <div class="card">
         <div class="card-header">
             <div class="rating">
-                <star-rating [rating]="4"></star-rating>
+                <star-rating [rating]="kahnCard.rating"></star-rating>
             </div>
-            <div class="name">Stomatolog Vasile Ion</div>
-            <div class="reviews">0 reviews</div>
+            <div class="name">{{kahnCard.title}}</div>
+            <div class="reviews">{{kahnCard.reviews}} review(s)</div>
         </div>
         <div class="card-content">
             <mat-tab-group>
                 <mat-tab label="Details">
                     <div class="card-details-content">
-                        <p>Name: Vasile Ion</p>
-                        <p>Field of activity: Healthcare</p>
-                        <p>Profession: Dentist</p>
-                        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean et lectus ex. Phasellus vel pellentesque dui, dignissim hendrerit metus.
-                            Nulla facilisis lacus sed velit convallis, a porta diam malesuada. Sed eget odio libero. In hac habitasse platea dictumst. Nulla facilisi. Cras sed eros
-                            lacus. Phasellus auctor pretium ante, a porta dui sollicitudin eu.Fusce lobortis at diam bibendum tincidunt. Curabitur id tortor ac metus ornare
-                            placerat. Integer commodo nibh et orci maximus consequat. Cras sed ante ex. Integer efficitur massa eleifend dui lacinia, id consectetur lorem ornare.
-                            Aliquam nec ligula quis odio condimentum condimentum. Duis nec arcu sagittis enim dictum interdum quis nec velit. Pellentesque in est commodo, aliquet
-                            orci in, interdum ex. Nunc ullamcorper nulla eget sodales fringilla.</p>
-                        <p>Address: Str. Pestalotii nr 50, Timisoara</p>
-                        <p>County: Timis</p>
-                        <p>Phone: 0770 222 333</p>
+                        <p>Name: {{kahnCard.name}}</p>
+                        <p>Field of activity: {{kahnCard.foa}}</p>
+                        <p>Profession: {{kahnCard.profession}}</p>
+                        <p>Description: {{kahnCard.description}}</p>
+                        <p>Address: {{kahnCard.address}}</p>
+                        <p>County: {{kahnCard.county}}</p>
+                        <p>Phone: {{kahnCard.phone}}</p>
                     </div>
                 </mat-tab>
                 <mat-tab label="Reviews"> Content 2 </mat-tab>
