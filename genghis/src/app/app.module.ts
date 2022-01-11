@@ -13,6 +13,9 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { KahnCardComponent } from './components/kahn-card/kahn-card.component'
 import { StarRatingComponent } from './components/star-rating/star-rating.component'
 import { KahnFilterComponent } from './components/kahn-filter/kahn-filter.component'
+import { MyProfileComponent } from './components/user-profile/my-profile/my-profile.component'
+import { FavoritesComponent } from './components/user-profile/favorites/favorites.component'
+import { MyOffersComponent } from './components/user-profile/my-offers/my-offers.component'
 // angular material
 import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
@@ -39,7 +42,19 @@ const materialModules = [
 ]
 
 @NgModule({
-	declarations: [AppComponent, HomeComponent, PageNotFoundComponent, NavigationMenuComponent, UserProfileComponent, KahnCardComponent, StarRatingComponent, KahnFilterComponent],
+	declarations: [
+		AppComponent,
+		HomeComponent,
+		PageNotFoundComponent,
+		NavigationMenuComponent,
+		UserProfileComponent,
+		KahnCardComponent,
+		StarRatingComponent,
+		KahnFilterComponent,
+		MyProfileComponent,
+		FavoritesComponent,
+		MyOffersComponent,
+	],
 	imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, ...materialModules, FormsModule, ReactiveFormsModule, HttpClientModule],
 	providers: [],
 	bootstrap: [AppComponent],
