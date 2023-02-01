@@ -1,0 +1,94 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+$blue-sapphire-palette: (
+	50: #cef2ff,
+	100: #a9daf2,
+	200: #87bdd9,
+	300: #62a0bf,
+	400: #458bac,
+	500: #1f7699,
+	600: #086788,
+	700: #005472,
+	800: #00425c,
+	900: #002d44,
+	contrast: (
+		50: rgba(black, 0.87),
+		100: rgba(black, 0.87),
+		200: rgba(black, 0.87),
+		300: rgba(black, 0.87),
+		400: rgba(black, 0.87),
+		500: white,
+		600: white,
+		700: white,
+		800: white,
+		900: white,
+	),
+);
+
+$english-red-palette: (
+	50: #fbe5e8,
+	100: #f6bdc5,
+	200: #ef94a0,
+	300: #e66e7d,
+	400: #de5563,
+	500: #d6464d,
+	600: #c7404b,
+	700: #b23a48,
+	800: #9e3445,
+	900: #792b3f,
+	contrast: (
+		50: rgba(black, 0.87),
+		100: rgba(black, 0.87),
+		200: rgba(black, 0.87),
+		300: rgba(black, 0.87),
+		400: rgba(black, 0.87),
+		500: rgba(black, 0.87),
+		600: white,
+		700: white,
+		800: white,
+		900: white,
+	),
+);
+
+$gainsboro-palette: (
+	50: #f9f9fa,
+	100: #f3f3f4,
+	200: #ebebec,
+	300: #dcdcdd,
+	400: #b9b9ba,
+	500: #99999a,
+	600: #707071,
+	700: #5d5d5e,
+	800: #3e3e3f,
+	900: #1d1d1e,
+	contrast: (
+		50: rgba(black, 0.87),
+		100: rgba(black, 0.87),
+		200: rgba(black, 0.87),
+		300: rgba(black, 0.87),
+		400: rgba(black, 0.87),
+		500: white,
+		600: white,
+		700: white,
+		800: white,
+		900: white,
+	),
+);
+
+$genghis-theme: mat.define-dark-theme(
+	(
+		color: (
+			primary: mat.define-palette($blue-sapphire-palette, 600, 300, 900),
+			accent: mat.define-palette($gainsboro-palette, 300, 100, 500),
+			warn: mat.define-palette($english-red-palette, 400),
+		),
+		typography:
+			mat.define-typography-config(
+				$font-family: 'Inter',
+			),
+		density: 0,
+	)
+);
+
+@include mat.all-component-themes($genghis-theme);
