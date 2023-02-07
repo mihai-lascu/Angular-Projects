@@ -1,6 +1,7 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import decode from 'jwt-decode';
-import { BehaviorSubject, Observable, pipe, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, pipe } from 'rxjs';
 import { catchError, filter, map, mergeMap, tap } from 'rxjs/operators';
 
 import { transformError } from '../shared/utils/utils';
@@ -38,7 +39,10 @@ export abstract class AuthService extends CacheService implements IAuthService {
 		filter((status: IAuthStatus) => status.isAuthenticated),
 		mergeMap(() => this.getCurrentUser()),
 		map((user: IUser) => this.currentUser$.next(user)),
-		catchError(transformError)
+		catchError((err: HttpErrorResponse) => {
+			this.logout();
+			return transformError(err);
+		})
 	);
 
 	readonly authStatus$ = new BehaviorSubject<IAuthStatus>(defaultAuthStatus);
@@ -76,13 +80,6 @@ export abstract class AuthService extends CacheService implements IAuthService {
 			tap((status) => this.authStatus$.next(status)),
 			this.getAndUpdateUserIfAuthenticated
 		);
-
-		loginResponse$.subscribe({
-			error: (err) => {
-				this.logout();
-				return throwError(() => err);
-			},
-		});
 
 		return loginResponse$;
 	}

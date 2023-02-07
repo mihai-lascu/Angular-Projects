@@ -2,7 +2,7 @@ import { AuthMode } from 'src/app/auth/auth.enum';
 
 export const environment = {
 	production: false,
-	authMode: AuthMode.InMemory,
+	authMode: AuthMode.Firebase,
 	firebase: {
 		projectId: 'genghis-project',
 		appId: '1:564989676810:web:bcdfc703a758cf56bafef3',

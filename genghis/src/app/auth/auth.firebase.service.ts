@@ -4,9 +4,10 @@ import {
 	signInWithEmailAndPassword,
 	User as FireUser,
 	authState,
+	UserCredential,
 } from '@angular/fire/auth';
-import { Observable, Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { from, Observable, throwError } from 'rxjs';
+import { catchError, map, switchMap } from 'rxjs/operators';
 
 import { IUser, User } from '../user/user';
 import { Role } from './auth.enum';
@@ -34,21 +35,31 @@ export class FirebaseAuthService extends AuthService {
 		email: string,
 		password: string
 	): Observable<IServerAuthResponse> {
-		const serverResponse$ = new Subject<IServerAuthResponse>();
-
-		signInWithEmailAndPassword(this.afAuth, email, password).then(
-			(res) => {
-				const firebaseUser: FireUser | null = res.user;
-				firebaseUser?.getIdToken().then(
-					(token) =>
-						serverResponse$.next({
-							accessToken: token,
-						} as IServerAuthResponse),
-					(err) => serverResponse$.error(err)
-				);
-			},
-			(err) => serverResponse$.error(err)
+		const serverResponse$: Observable<IServerAuthResponse> = from(
+			signInWithEmailAndPassword(this.afAuth, email, password)
+		).pipe(
+			switchMap((res: UserCredential) =>
+				from(res.user.getIdToken()).pipe(
+					map((token) => ({ accessToken: token } as IServerAuthResponse)),
+					catchError((err) => throwError(() => err))
+				)
+			),
+			catchError((err) => throwError(() => err))
 		);
+
+		// signInWithEmailAndPassword(this.afAuth, email, password).then(
+		// 	(res) => {
+		// 		const firebaseUser: FireUser | null = res.user;
+		// 		firebaseUser?.getIdToken().then(
+		// 			(token) =>
+		// 				serverResponse$.next({
+		// 					accessToken: token,
+		// 				} as IServerAuthResponse),
+		// 			(err) => serverResponse$.error(err)
+		// 		);
+		// 	},
+		// 	(err) => serverResponse$.error(err)
+		// );
 
 		return serverResponse$;
 	}
