@@ -1,0 +1,12 @@
+:host {
+	height: 100%;
+	width: 100%;
+	display: block;
+	.img {
+		height: 100%;
+		width: 100%;
+		background-image: url('../../../assets/chart2.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}

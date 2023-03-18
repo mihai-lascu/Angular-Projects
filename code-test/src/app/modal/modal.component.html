@@ -1,0 +1,43 @@
+<span class="title">Add card</span>
+<mat-divider></mat-divider>
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+	<div class="content">
+		<div class="input-group">
+			<span class="label">Printer*</span>
+			<div class="inputs">
+				<mat-form-field appearance="outline" color="accent">
+					<input matInput formControlName="printer" />
+					<mat-error *ngIf="formGroup.hasError('required', 'printer')"
+						>Required</mat-error
+					>
+				</mat-form-field>
+			</div>
+		</div>
+		<div class="input-group">
+			<span class="label">Type</span>
+			<div class="inputs">
+				<mat-checkbox formControlName="statusReport" [disableRipple]="true"
+					>Status report</mat-checkbox
+				>
+				<mat-checkbox formControlName="performance">Performance</mat-checkbox>
+				<mat-checkbox formControlName="printerActions"
+					>Printer actions</mat-checkbox
+				>
+				<mat-checkbox formControlName="jobActions">Job actions</mat-checkbox>
+			</div>
+		</div>
+	</div>
+	<div class="buttons-wrapper">
+		<button
+			mat-raised-button
+			color="accent"
+			type="submit"
+			[disabled]="formGroup.invalid"
+		>
+			Ok
+		</button>
+		<button mat-raised-button color="accent" type="button" (click)="onCancel()">
+			Cancel
+		</button>
+	</div>
+</form>

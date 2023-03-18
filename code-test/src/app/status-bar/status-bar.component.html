@@ -1,0 +1,13 @@
+<div *ngIf="currentStatus$ | async as status" class="status">
+	<span
+		class="dot"
+		[ngClass]="{
+			orange: status.dot === 'orange',
+			green: status.dot === 'green'
+		}"
+	></span>
+	<span *ngIf="status.dot === 'orange'">
+		Current action: {{ status.action }}
+	</span>
+	<span *ngIf="status.dot === 'green'"> Last action: {{ status.action }} </span>
+</div>

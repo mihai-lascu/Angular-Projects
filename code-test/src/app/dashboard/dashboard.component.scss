@@ -1,0 +1,15 @@
+:host {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	row-gap: 16px;
+	column-gap: 16px;
+	align-content: flex-start;
+	padding: 24px;
+	box-sizing: border-box;
+
+	@media screen and (max-width: 585px) {
+		justify-content: center;
+	}
+}

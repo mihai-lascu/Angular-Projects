@@ -1,0 +1,22 @@
+<app-card
+	*ngFor="let card of cards$ | async; let i = index"
+	[card]="card"
+	(deleteCardEvent)="removeCard(i)"
+>
+	<ng-container [ngSwitch]="card.type">
+		<ng-container *ngSwitchCase="'Performance'">
+			<app-performance [printer]="card.printer"></app-performance>
+		</ng-container>
+		<ng-container *ngSwitchCase="'Status Report'">
+			<app-status-report></app-status-report>
+		</ng-container>
+		<ng-container *ngSwitchCase="'Printer Actions'">
+			<app-printer-actions
+				(action)="onCardAction($event, card)"
+			></app-printer-actions>
+		</ng-container>
+		<ng-container *ngSwitchCase="'Job Actions'">
+			<app-job-actions (action)="onCardAction($event, card)"></app-job-actions>
+		</ng-container>
+	</ng-container>
+</app-card>
