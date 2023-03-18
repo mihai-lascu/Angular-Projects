@@ -13,7 +13,7 @@ export class CardComponent implements OnInit {
 		message: '',
 	});
 
-	connectionJammer$ = interval((Math.random() + 1) * 5000).pipe(
+	connectionJammer$ = interval((Math.random() + 2) * 5000).pipe(
 		tap(() => {
 			if (this.connection$.value.ready) {
 				this.connection$.next({
