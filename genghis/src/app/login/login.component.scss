@@ -1,3 +1,46 @@
-.error {
-	color: red;
+:host {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login-form {
+	display: flex;
+	flex-direction: column;
+	padding: 0 12px;
+	box-sizing: border-box;
+	row-gap: 32px;
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 28px;
+	}
+
+	.form {
+		display: flex;
+		flex-direction: column;
+		row-gap: 12px;
+
+		.field {
+			height: 87px;
+			label {
+				display: block;
+				margin-bottom: 4px;
+			}
+		}
+
+		.buttons {
+			width: 100%;
+			button {
+				width: 100%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
 }

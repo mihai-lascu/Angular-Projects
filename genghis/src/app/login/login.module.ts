@@ -3,23 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
-import { MatCardModule } from '@angular/material/card';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatExpansionModule } from '@angular/material/expansion';
-import { MatButtonModule } from '@angular/material/button';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 
-const materialModules = [
-	MatCardModule,
-	MatIconModule,
-	MatInputModule,
-	MatFormFieldModule,
-	MatExpansionModule,
-	MatButtonModule,
-	MatGridListModule,
-];
+const primeModules = [CardModule, InputTextModule, ButtonModule];
 
 @NgModule({
 	declarations: [LoginComponent],
@@ -30,7 +18,7 @@ const materialModules = [
 		]),
 		FormsModule,
 		ReactiveFormsModule,
-		...materialModules,
+		primeModules,
 	],
 	providers: [],
 })
