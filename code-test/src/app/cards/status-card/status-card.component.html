@@ -1,0 +1,23 @@
+<ng-container [ngSwitch]="card.type">
+	<ng-container *ngSwitchCase="'Performance'" [ngTemplateOutlet]="performance">
+	</ng-container>
+	<ng-container
+		*ngSwitchCase="'Status Report'"
+		[ngTemplateOutlet]="statusReport"
+	>
+	</ng-container>
+</ng-container>
+
+<ng-template #performance>
+	<div class="img"></div>
+</ng-template>
+<ng-template #statusReport>
+	<div *ngIf="jobs$ | async as jobs" class="jobs">
+		<ng-container *ngIf="jobs.length; else noJobs">
+			<div *ngFor="let job of jobs" class="job">
+				<span>{{ job.action }} - {{ job.result }}</span>
+			</div>
+		</ng-container>
+	</div>
+</ng-template>
+<ng-template #noJobs> No jobs for {{ card.printer }} </ng-template>

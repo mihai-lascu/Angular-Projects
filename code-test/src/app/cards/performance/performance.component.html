@@ -1,8 +1,0 @@
-<ng-container *ngIf="jobs$ | async as jobs">
-	<ng-container *ngIf="jobs.length; else noJobs">
-		<div *ngFor="let job of jobs" class="job">
-			<span>{{ job.action }} - {{ job.result }}</span>
-		</div>
-	</ng-container>
-</ng-container>
-<ng-template #noJobs> No jobs for {{ printer }} </ng-template>

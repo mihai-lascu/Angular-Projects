@@ -1,0 +1,39 @@
+<ng-container [ngSwitch]="card.type">
+	<ng-container *ngSwitchCase="'Job Actions'" [ngTemplateOutlet]="jobActions">
+	</ng-container>
+	<ng-container
+		*ngSwitchCase="'Printer Actions'"
+		[ngTemplateOutlet]="printerActions"
+	>
+	</ng-container>
+</ng-container>
+
+<ng-template #jobActions>
+	<button
+		mat-raised-button
+		color="accent"
+		(click)="action.emit('Reprint last file')"
+	>
+		Reprint last file
+	</button>
+	<button mat-raised-button color="accent" (click)="action.emit('Pause job')">
+		Pause job
+	</button>
+</ng-template>
+
+<ng-template #printerActions>
+	<button
+		mat-raised-button
+		color="accent"
+		(click)="action.emit('Turn off printer')"
+	>
+		Turn off
+	</button>
+	<button
+		mat-raised-button
+		color="accent"
+		(click)="action.emit('Turn on printer')"
+	>
+		Turn on
+	</button>
+</ng-template>

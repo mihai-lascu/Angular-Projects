@@ -7,22 +7,22 @@
 			<div class="inputs">
 				<mat-form-field appearance="outline" color="accent">
 					<input matInput formControlName="printer" />
-					<mat-error *ngIf="formGroup.hasError('required', 'printer')"
-						>Required</mat-error
-					>
+					<mat-error *ngIf="formGroup.hasError('required', 'printer')">
+						Required
+					</mat-error>
 				</mat-form-field>
 			</div>
 		</div>
 		<div class="input-group">
 			<span class="label">Type</span>
 			<div class="inputs">
-				<mat-checkbox formControlName="statusReport" [disableRipple]="true"
-					>Status report</mat-checkbox
-				>
+				<mat-checkbox formControlName="statusReport">
+					Status report
+				</mat-checkbox>
 				<mat-checkbox formControlName="performance">Performance</mat-checkbox>
-				<mat-checkbox formControlName="printerActions"
-					>Printer actions</mat-checkbox
-				>
+				<mat-checkbox formControlName="printerActions">
+					Printer actions
+				</mat-checkbox>
 				<mat-checkbox formControlName="jobActions">Job actions</mat-checkbox>
 			</div>
 		</div>

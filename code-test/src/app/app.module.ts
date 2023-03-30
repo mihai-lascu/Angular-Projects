@@ -9,25 +9,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { StatusBarComponent } from './status-bar/status-bar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CardComponent } from './card/card.component';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card';
-import { StatusReportComponent } from './cards/status-report/status-report.component';
-import { PerformanceComponent } from './cards/performance/performance.component';
-import { PrinterActionsComponent } from './cards/printer-actions/printer-actions.component';
-import { JobActionsComponent } from './cards/job-actions/job-actions.component';
+import { CardsModule } from './cards/cards.module';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		StatusBarComponent,
-		DashboardComponent,
-		CardComponent,
-		StatusReportComponent,
-		PerformanceComponent,
-		PrinterActionsComponent,
-		JobActionsComponent,
-	],
+	declarations: [AppComponent, StatusBarComponent, DashboardComponent],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
@@ -35,8 +20,7 @@ import { JobActionsComponent } from './cards/job-actions/job-actions.component';
 		MatDialogModule,
 		MatButtonModule,
 		MatToolbarModule,
-		MatIconModule,
-		MatCardModule,
+		CardsModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

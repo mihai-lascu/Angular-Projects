@@ -1,12 +1,22 @@
 :host {
-	height: 100%;
 	width: 100%;
-	display: block;
+	height: 100%;
+
 	.img {
 		height: 100%;
 		width: 100%;
 		background-image: url('../../../assets/chart2.png');
 		background-size: contain;
 		background-repeat: no-repeat;
+	}
+
+	.jobs {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		row-gap: 8px;
+		padding: 12px;
+		box-sizing: border-box;
 	}
 }

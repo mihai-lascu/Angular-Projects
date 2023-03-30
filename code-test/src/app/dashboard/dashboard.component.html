@@ -5,18 +5,36 @@
 >
 	<ng-container [ngSwitch]="card.type">
 		<ng-container *ngSwitchCase="'Performance'">
-			<app-performance [printer]="card.printer"></app-performance>
+			<app-status-card [card]="card"></app-status-card>
 		</ng-container>
 		<ng-container *ngSwitchCase="'Status Report'">
-			<app-status-report></app-status-report>
+			<app-status-card [card]="card"></app-status-card>
 		</ng-container>
 		<ng-container *ngSwitchCase="'Printer Actions'">
-			<app-printer-actions
+			<app-action-card
+				[card]="card"
 				(action)="onCardAction($event, card)"
-			></app-printer-actions>
+			></app-action-card>
 		</ng-container>
 		<ng-container *ngSwitchCase="'Job Actions'">
-			<app-job-actions (action)="onCardAction($event, card)"></app-job-actions>
+			<app-action-card
+				[card]="card"
+				(action)="onCardAction($event, card)"
+			></app-action-card>
 		</ng-container>
 	</ng-container>
+
+	<!-- <ng-container
+		*ngIf="card.type === 'Job Actions' || card.type === 'Printer Actions'"
+	>
+		<app-action-card
+			[card]="card"
+			(action)="onCardAction($event, card)"
+		></app-action-card>
+	</ng-container>
+	<ng-container
+		*ngIf="card.type === 'Performance' || card.type === 'Status Report'"
+	>
+		<app-status-card [card]="card"></app-status-card>
+	</ng-container> -->
 </app-card>

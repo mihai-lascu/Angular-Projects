@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BehaviorSubject, interval, map, tap } from 'rxjs';
-import { Card, Connection } from '../utils/types';
+import { Card, Connection } from '../../utils/types';
 
 @Component({
 	selector: 'app-card',

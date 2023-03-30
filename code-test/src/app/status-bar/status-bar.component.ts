@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { delay, merge, tap } from 'rxjs';
+import { debounceTime, filter, tap } from 'rxjs';
 import { StatusService } from '../status.service';
 
 @Component({
@@ -9,5 +9,10 @@ import { StatusService } from '../status.service';
 })
 export class StatusBarComponent {
 	currentStatus$ = this.statusService.getStatus();
+	updateStatus$ = this.statusService.getStatus().pipe(
+		filter((status) => status.dot !== 'green'),
+		debounceTime(5000),
+		tap((status) => this.statusService.updateStatus(status))
+	);
 	constructor(private statusService: StatusService) {}
 }
