@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +9,6 @@ import { CommonModule } from '@angular/common';
   styleUrl: './welcome.component.scss'
 })
 export class WelcomeComponent {
-
+	@Input() name = 'friend';
+	@Output() cookiesAccepted = new EventEmitter<boolean>();
 }

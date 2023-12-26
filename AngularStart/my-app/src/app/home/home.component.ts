@@ -13,4 +13,11 @@ import {ReversePipe} from "./ui/reverse.pipe";
 })
 export class HomeComponent {
 	magic = 'reverse me';
+	user = {
+		name: 'Mihai'
+	};
+
+	handleCookies() {
+		console.log('do something');
+	}
 }
