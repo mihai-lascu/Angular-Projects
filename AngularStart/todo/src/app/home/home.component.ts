@@ -1,16 +1,16 @@
 import {Component} from '@angular/core';
 import {TodoFormComponent} from "./ui/todo-form/todo-form.component";
-import {Todo} from "../shared/types/todo";
+import {TodoService} from "../shared/data-access/todo.service";
+import {TodoListComponent} from "./ui/todo-list/todo-list.component";
 
 @Component({
 	selector: 'app-home',
 	standalone: true,
-	imports: [TodoFormComponent],
+	imports: [TodoFormComponent, TodoListComponent],
 	templateUrl: './home.component.html',
 	styleUrl: './home.component.scss'
 })
 export default class HomeComponent {
-	createTodo(todo: Todo) {
-		console.log(todo);
-	}
+	constructor(public todoService: TodoService) {}
+
 }
