@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
-import {Todo} from "../../../shared/types/todo";
+import {CreateTodo} from "../../../shared/types/todo";
 
 @Component({
 	selector: 'app-todo-form',
@@ -10,7 +10,7 @@ import {Todo} from "../../../shared/types/todo";
 	styleUrl: './todo-form.component.scss'
 })
 export class TodoFormComponent {
-	@Output() todoSubmitted = new EventEmitter<Todo>();
+	@Output() todoSubmitted = new EventEmitter<CreateTodo>();
 	todoForm = this.fb.nonNullable.group({
 		title: ['', Validators.required],
 		description: ['']
