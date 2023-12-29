@@ -1,1 +1,3 @@
-<p *ngIf="detailId()">You have accessed a detail with id: {{detailId()}}</p>
+@if (detailId(); as id) {
+	<p>You have accessed a detail with id: {{id}}</p>
+}
