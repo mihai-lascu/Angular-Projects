@@ -3,5 +3,16 @@
 	(cookiesAccepted)="handleCookies()"
 />
 <p>I am the home component!</p>
-<p randomColor> I am stylish</p>
-<p>Time for a little: {{ magic | reverse}}</p>
+<!--<p randomColor> I am stylish</p>-->
+<!--<p>Time for a little: {{ magic | reverse}}</p>-->
+<!--<a [routerLink]="['/settings']">Go to settings</a>-->
+<!--<div>-->
+<!--	<button (click)="handleLogin()">Login</button>-->
+<!--</div>-->
+<ul>
+	@for (detail of listOfDetails; track detail.id) {
+		<li>
+			<a [routerLink]="['/detail', detail.id]">{{ detail.name }}</a>
+		</li>
+	}
+</ul>
