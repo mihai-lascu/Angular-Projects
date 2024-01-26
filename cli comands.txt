@@ -1,0 +1,4 @@
+Angular CLI commands:
+
+Create new project with standalone, routing, style scss, skip tests:
+ng new app --defaults --standalone --routing --style=scss --skip-tests
