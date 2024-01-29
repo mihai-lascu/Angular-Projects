@@ -1,30 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="89d2436f-a899-456f-a426-c784e63230f0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/test-material-app/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/.vscode/extensions.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/.vscode/tasks.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/angular.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/app.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/app.routes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/assets/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/main.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/tsconfig.app.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/tsconfig.spec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-material-app/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-material-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-material-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-material-app/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-material-app/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,18 +38,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mihailascu/work/Angular-Projects/AngularStart&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/mihailascu/work/Angular-Projects/AngularStart",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,7 +65,7 @@
       <workItem from="1700903147322" duration="16000" />
       <workItem from="1700903364476" duration="18000" />
       <workItem from="1706537751058" duration="166000" />
-      <workItem from="1706537974195" duration="58000" />
+      <workItem from="1706537974195" duration="764000" />
     </task>
     <servers />
   </component>
