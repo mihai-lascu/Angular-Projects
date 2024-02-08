@@ -1,5 +1,8 @@
-import { Component, input } from '@angular/core';
-import { ChecklistItem } from "../../../shared/interfaces/checklist-item";
+import { Component, EventEmitter, input, Output } from '@angular/core';
+import {
+    ChecklistItem,
+    RemoveChecklistItem
+} from "../../../shared/interfaces/checklist-item";
 
 @Component({
     selector: 'app-checklist-item-list',
@@ -10,4 +13,5 @@ import { ChecklistItem } from "../../../shared/interfaces/checklist-item";
 })
 export class ChecklistItemListComponent {
     checklistItems = input.required<ChecklistItem[]>();
+    @Output() toggle = new EventEmitter<RemoveChecklistItem>();
 }
