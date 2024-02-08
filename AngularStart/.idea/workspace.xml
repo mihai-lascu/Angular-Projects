@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89d2436f-a899-456f-a426-c784e63230f0" name="Changes" comment="Module 8: Lesson 5">
-      <change afterPath="$PROJECT_DIR$/quicklists/src/app/shared/data-access/checklist.service.ts" afterDir="false" />
+    <list default="true" id="89d2436f-a899-456f-a426-c784e63230f0" name="Changes" comment="Module 8: Lesson 6">
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/home/ui/checklist-list/checklist-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/home/ui/checklist-list/checklist-list.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/home/ui/checklist-list/checklist-list.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quicklists/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/home/home.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/quicklists/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/quicklists/src/app/shared/interfaces/checklist.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/shared/interfaces/checklist.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,7 @@
       <workItem from="1700903364476" duration="18000" />
       <workItem from="1706537751058" duration="166000" />
       <workItem from="1706537974195" duration="764000" />
-      <workItem from="1706883143004" duration="6372000" />
+      <workItem from="1706883143004" duration="6843000" />
     </task>
     <task id="LOCAL-00001" summary="Module 8: Lesson 2">
       <option name="closed" value="true" />
@@ -96,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707392615432</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Module 8: Lesson 6">
+      <option name="closed" value="true" />
+      <created>1707393998470</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1707393998470</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,6 +116,7 @@
     <MESSAGE value="Module 8: Lesson 2" />
     <MESSAGE value="Module 8: Lesson 4" />
     <MESSAGE value="Module 8: Lesson 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="Module 8: Lesson 5" />
+    <MESSAGE value="Module 8: Lesson 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Module 8: Lesson 6" />
   </component>
 </project>

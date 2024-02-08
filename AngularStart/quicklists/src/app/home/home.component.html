@@ -2,6 +2,11 @@
     <h1>Quicklists</h1>
     <button (click)="checklistBeingEdited.set({})">Add Checklist</button>
 
+    <section>
+        <h2>Your checklists</h2>
+        <app-checklist-list [checklists]="checklistService.checklists()"/>
+    </section>
+
     <app-modal [isOpen]="!!checklistBeingEdited()">
         <ng-template>
             <app-form-modal
