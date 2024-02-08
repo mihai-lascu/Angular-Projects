@@ -5,16 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89d2436f-a899-456f-a426-c784e63230f0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/quicklists/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/.vscode/extensions.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/.vscode/launch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/.vscode/tasks.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/angular.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/app.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/app.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/app.routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/home/home.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/home/home.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/app/home/home.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/src/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/tsconfig.app.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/quicklists/tsconfig.spec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +67,15 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/mihailascu/work/Angular-Projects/AngularStart/quicklists/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/quicklists/src/app" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,6 +88,7 @@
       <workItem from="1700903364476" duration="18000" />
       <workItem from="1706537751058" duration="166000" />
       <workItem from="1706537974195" duration="764000" />
+      <workItem from="1706883143004" duration="1187000" />
     </task>
     <servers />
   </component>
