@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, EventEmitter, input, Output } from '@angular/core';
 import { RouterLink } from "@angular/router";
 import { Checklist } from "../../../shared/interfaces/checklist";
 
@@ -13,4 +13,5 @@ import { Checklist } from "../../../shared/interfaces/checklist";
 })
 export class ChecklistHeaderComponent {
     checklist = input.required<Checklist>();
+    @Output() addItem = new EventEmitter<void>();
 }
