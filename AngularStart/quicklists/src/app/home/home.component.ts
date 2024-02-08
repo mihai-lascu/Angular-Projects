@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { ModalComponent } from "../shared/ui/modal/modal.component";
+import { Checklist } from "../shared/interfaces/checklist";
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    standalone: true,
+    imports: [
+        ModalComponent
+    ],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export default class HomeComponent {
-
+    checklistBeingEdited = signal<Partial<Checklist> | null>(null);
 }
