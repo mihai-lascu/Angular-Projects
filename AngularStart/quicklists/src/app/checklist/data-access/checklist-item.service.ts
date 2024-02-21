@@ -1,4 +1,4 @@
-import { computed, Injectable, signal } from '@angular/core';
+import { computed, effect, Injectable, signal } from '@angular/core';
 import {
     AddChecklistItem,
     ChecklistItem,
@@ -7,9 +7,12 @@ import {
 import { Subject } from "rxjs";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { RemoveChecklist } from "../../shared/interfaces/checklist";
+import { StorageService } from "../../shared/data-access/storage.service";
 
 export interface ChecklistItemsState {
     checklistItems: ChecklistItem[];
+    loaded: boolean;
+    error: string | null;
 }
 
 @Injectable({
@@ -17,16 +20,33 @@ export interface ChecklistItemsState {
 })
 export class ChecklistItemService {
     private state = signal<ChecklistItemsState>({
-        checklistItems: []
+        checklistItems: [],
+        loaded: false,
+        error: null
     })
+    private checklistItemsLoaded$ = this.storageService.loadChecklistItems();
 
     checklistItems = computed(() => this.state().checklistItems);
+    loaded = computed(() => this.state().loaded);
 
     add$ = new Subject<AddChecklistItem>();
     toggle$ = new Subject<RemoveChecklistItem>();
     reset$ = new Subject<RemoveChecklist>();
 
-    constructor() {
+    constructor(
+        private storageService: StorageService
+    ) {
+        this.checklistItemsLoaded$.pipe(takeUntilDestroyed()).subscribe({
+            next: (checklistItems) => this.state.update((state) => ({
+                ...state,
+                checklistItems,
+                loaded: true
+            })),
+            error: (err) => this.state.update((state) => ({
+                ...state,
+                error: err
+            }))
+        })
         this.add$.pipe(takeUntilDestroyed()).subscribe((checklistItem) =>
             this.state.update((state) => ({
                 ...state,
@@ -61,5 +81,10 @@ export class ChecklistItemService {
                 )
             }))
         );
+        effect(() => {
+            if (this.loaded()) {
+                this.storageService.saveChecklistItems(this.checklistItems());
+            }
+        });
     }
 }
