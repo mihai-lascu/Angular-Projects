@@ -1,6 +1,55 @@
-<button mat-raised-button
-        style="width: fit-content"
-        color="primary"
-        (click)="onButtonClick()">
-    Click me!
-</button>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Product request table</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Filters</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div style="display: flex; align-items: flex-start; justify-content: space-between">
+                    <div>
+                        <mat-form-field color="accent" appearance="outline">
+                            <mat-label>ID</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="ID">
+                        </mat-form-field>
+                        <mat-form-field color="accent" appearance="outline">
+                            <mat-label>Product</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Product">
+                        </mat-form-field>
+                        <mat-form-field color="accent" appearance="outline">
+                            <mat-label>Manufacturer</mat-label>
+                            <input matInput (keyup)="applyFilter($event)" placeholder="Manufacturer">
+                        </mat-form-field>
+                    </div>
+                    <mat-paginator
+                            [hidePageSize]="true"
+                            [pageSize]="50"
+                            [pageIndex]="0"
+                            [length]="200"
+                            [showFirstLastButtons]="false"
+                            (page)="paginationChanged($event)"
+                            color="accent"
+                            aria-label="Select page of product requests"
+                    ></mat-paginator>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </mat-card-content>
+    <mat-card-content style="height: 600px">
+        <app-table [columns]="displayedColumns" [dataSource]="dataSource" matSort (matSortChange)="sortChanged($event)" [matSortDisableClear]="true">
+            <!-- Manufacturers Column -->
+            <ng-container matColumnDef="manufacturers">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Manufacturers </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.manufacturers[0]?.name}} </mat-cell>
+            </ng-container>
+
+            <!-- Quantity Column -->
+            <ng-container matColumnDef="quantity">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Quantity </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.quantity?.value}} {{row.quantity?.uom?.name}}</mat-cell>
+            </ng-container>
+        </app-table>
+    </mat-card-content>
+</mat-card>

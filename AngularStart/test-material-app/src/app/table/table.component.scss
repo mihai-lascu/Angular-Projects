@@ -1,0 +1,14 @@
+:host {
+    display: block;
+    height: 100%;
+    overflow: auto;
+
+    .no-data-row {
+        padding: 0 24px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 300;
+    }
+}
