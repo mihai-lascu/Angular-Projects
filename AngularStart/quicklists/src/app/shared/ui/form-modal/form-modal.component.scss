@@ -1,0 +1,18 @@
+:host {
+    form {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    label {
+        text-transform: capitalize;
+    }
+}
