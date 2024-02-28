@@ -14,4 +14,6 @@ import {
 export class ChecklistItemListComponent {
     checklistItems = input.required<ChecklistItem[]>();
     @Output() toggle = new EventEmitter<RemoveChecklistItem>();
+    @Output() delete = new EventEmitter<RemoveChecklistItem>();
+    @Output() edit = new EventEmitter<ChecklistItem>;
 }

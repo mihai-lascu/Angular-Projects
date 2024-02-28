@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89d2436f-a899-456f-a426-c784e63230f0" name="Changes" comment="Module 8: Lesson 11">
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/interfaces/action-select.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/interfaces/query-based-list.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/interfaces/server-query-based.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/table/dummy-data.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/table/table.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/table/table.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/table/table.component.ts" afterDir="false" />
+    <list default="true" id="89d2436f-a899-456f-a426-c784e63230f0" name="Changes" comment="Module 8: Lesson 12">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-material-app/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/checklist/checklist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/checklist/checklist.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/checklist/checklist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/checklist/checklist.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/checklist/data-access/checklist-item.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/checklist/data-access/checklist-item.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/checklist/ui/checklist-item-list/checklist-item-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/checklist/ui/checklist-item-list/checklist-item-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/checklist/ui/checklist-item-list/checklist-item-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/checklist/ui/checklist-item-list/checklist-item-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/home/ui/checklist-list/checklist-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/home/ui/checklist-list/checklist-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/home/ui/checklist-list/checklist-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/home/ui/checklist-list/checklist-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quicklists/src/app/shared/data-access/checklist.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quicklists/src/app/shared/data-access/checklist.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,7 @@
       <workItem from="1706537751058" duration="166000" />
       <workItem from="1706537974195" duration="764000" />
       <workItem from="1706883143004" duration="15316000" />
-      <workItem from="1708517928694" duration="2946000" />
+      <workItem from="1708517928694" duration="6200000" />
     </task>
     <task id="LOCAL-00001" summary="Module 8: Lesson 2">
       <option name="closed" value="true" />
@@ -168,6 +168,7 @@
     <MESSAGE value="Module 8: Lesson 9" />
     <MESSAGE value="Module 8: Lesson 10" />
     <MESSAGE value="Module 8: Lesson 11" />
-    <option name="LAST_COMMIT_MESSAGE" value="Module 8: Lesson 11" />
+    <MESSAGE value="Module 8: Lesson 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Module 8: Lesson 12" />
   </component>
 </project>

@@ -1,7 +1,7 @@
 import { computed, effect, Injectable, signal } from '@angular/core';
 import {
     AddChecklistItem,
-    ChecklistItem,
+    ChecklistItem, EditChecklistItem,
     RemoveChecklistItem
 } from "../../shared/interfaces/checklist-item";
 import { Subject } from "rxjs";
@@ -30,8 +30,11 @@ export class ChecklistItemService {
     loaded = computed(() => this.state().loaded);
 
     add$ = new Subject<AddChecklistItem>();
+    delete$ = new Subject<RemoveChecklistItem>();
+    edit$ = new Subject<EditChecklistItem>();
     toggle$ = new Subject<RemoveChecklistItem>();
     reset$ = new Subject<RemoveChecklist>();
+    checklistRemoved$ = new Subject<RemoveChecklist>();
 
     constructor(
         private storageService: StorageService
@@ -61,6 +64,24 @@ export class ChecklistItemService {
                 ]
             }))
         );
+        this.delete$.pipe(takeUntilDestroyed()).subscribe((id) =>
+            this.state.update((state) => ({
+                ...state,
+                checklistItems: state.checklistItems.filter(
+                    (item) => item.id !== id
+                )
+            }))
+        );
+        this.edit$.pipe(takeUntilDestroyed()).subscribe((update) =>
+            this.state.update((state) => ({
+                ...state,
+                checklistItems: state.checklistItems.map((item) =>
+                    item.id === update.id
+                    ? { ...item, title: update.data.title }
+                    : item
+                )
+            }))
+        );
         this.toggle$.pipe(takeUntilDestroyed()).subscribe((checklistItemId) =>
             this.state.update((state) => ({
                 ...state,
@@ -81,6 +102,14 @@ export class ChecklistItemService {
                 )
             }))
         );
+        this.checklistRemoved$.pipe(takeUntilDestroyed()).subscribe((id) =>
+            this.state.update((state) => ({
+                ...state,
+                checklistItems: state.checklistItems.filter(
+                    (item) => item.checklistId !== id
+                )
+            }))
+        )
         effect(() => {
             if (this.loaded()) {
                 this.storageService.saveChecklistItems(this.checklistItems());

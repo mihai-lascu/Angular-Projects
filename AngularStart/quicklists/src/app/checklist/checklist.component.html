@@ -7,13 +7,20 @@
     <app-checklist-item-list
             [checklistItems]="items()"
             (toggle)="checklistItemService.toggle$.next($event)"
+            (delete)="checklistItemService.delete$.next($event)"
+            (edit)="checklistItemBeingEdited.set($event)"
     />
     <app-modal [isOpen]="!!checklistItemBeingEdited()">
         <ng-template>
             <app-form-modal
                 title="Create item"
                 [formGroup]="checklistItemForm"
-                (save)="checklistItemService.add$.next({
+                (save)="checklistItemBeingEdited()?.id
+                ? checklistItemService.edit$.next({
+                    id: checklistItemBeingEdited()!.id!,
+                    data: checklistItemForm.getRawValue()
+                })
+                : checklistItemService.add$.next({
                     item: checklistItemForm.getRawValue(),
                     checklistId: checklist.id
                 })"

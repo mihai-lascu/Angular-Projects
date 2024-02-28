@@ -1,4 +1,9 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import {
+    Component,
+    computed,
+    effect,
+    signal
+} from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { ChecklistService } from "../shared/data-access/checklist.service";
 import { toSignal } from "@angular/core/rxjs-interop";
@@ -49,6 +54,10 @@ export default class ChecklistComponent {
             const checklistItem = this.checklistItemBeingEdited();
             if (!checklistItem) {
                 this.checklistItemForm.reset();
+            } else {
+                this.checklistItemForm.patchValue({
+                    title: checklistItem.title
+                })
             }
         })
     }
