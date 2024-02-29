@@ -11,7 +11,7 @@ import {
 import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
-import { TableComponent } from "./table/table.component";
+import { ColumnDefinition, TableComponent } from "./table/table.component";
 
 @Component({
     selector: 'app-root',
@@ -32,7 +32,12 @@ import { TableComponent } from "./table/table.component";
 export class AppComponent {
     @ViewChild(MatPaginator) paginator: MatPaginator;
     @ViewChild(MatSort) sort: MatSort;
-    displayedColumns: string[] = [ 'id', 'product', 'manufacturers', 'quantity' ];
+    columns: ColumnDefinition[] = [
+        {key: 'id', name: 'Id', show: true, isTemplate: false},
+        {key: 'product', name: 'Product', show: false, isTemplate: false},
+        {key: 'manufacturers', name: 'Manufacturers', show: true, isTemplate: true},
+        {key: 'quantity', name: 'Quantity', show: true, isTemplate: false},
+    ];
     dataSource = new MatTableDataSource(dummyData);
 
     constructor() {}

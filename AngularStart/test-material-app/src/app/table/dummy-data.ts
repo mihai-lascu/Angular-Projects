@@ -28,12 +28,7 @@ export const dummyData = [
                 "grades": []
             }
         ],
-        "quantity": {
-            "value": 22.5,
-            "uom": {
-                "name": "kg"
-            }
-        },
+        "quantity": 22.5,
         "expirationDate": "2023-11-03T09:31:41.223231",
         "deliveryTerms": {
             "incotermText": "FOB  Vanino, RU VNN (RU)"
@@ -91,12 +86,7 @@ export const dummyData = [
                 "grades": []
             }
         ],
-        "quantity": {
-            "value": 1234,
-            "uom": {
-                "name": "kg"
-            }
-        },
+        "quantity": 1234,
         "expirationDate": "2023-11-02T14:06:46.225686",
         "deliveryTerms": {
             "incotermText": "EXW  Amsterdam (NL)"
@@ -158,12 +148,7 @@ export const dummyData = [
                 "grades": []
             }
         ],
-        "quantity": {
-            "value": 450,
-            "uom": {
-                "name": "L"
-            }
-        },
+        "quantity": 450,
         "expirationDate": "2023-11-01T07:56:26.253274",
         "deliveryTerms": {
             "incotermText": "FOB  Lefkimmi, GR LFK (GR)"

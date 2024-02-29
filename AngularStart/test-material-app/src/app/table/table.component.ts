@@ -1,10 +1,11 @@
 import {
     AfterContentInit,
     Component,
+    computed,
     ContentChild,
     ContentChildren,
-    Input,
-    QueryList,
+    input,
+    QueryList, TemplateRef,
     ViewChild,
 } from '@angular/core';
 import {
@@ -19,6 +20,14 @@ import {
 import { MatSortModule } from "@angular/material/sort";
 import { CommonModule } from "@angular/common";
 
+export type ColumnDefinition = {
+    key: string;
+    name: string;
+    show: boolean;
+    isTemplate: boolean;
+    pipeFn?: () => {}
+};
+
 @Component({
     selector: 'app-table',
     standalone: true,
@@ -32,10 +41,17 @@ export class TableComponent<T> implements AfterContentInit {
     @ContentChildren(MatColumnDef) columnDefs: QueryList<MatColumnDef>;
     @ContentChild(MatNoDataRow) noDataRow: MatNoDataRow;
 
+    @ContentChild(TemplateRef) customTemplate: TemplateRef<any>;
+
     @ViewChild(MatTable, {static: true}) table: MatTable<T>;
 
-    @Input() columns: string[] = [];
-    @Input() dataSource: MatTableDataSource<T>;
+    dataSource = input.required<MatTableDataSource<T>>();
+    columns = input.required<ColumnDefinition[]>();
+    columnsToDisplay = computed(() =>
+        this.columns()
+            .filter((column) => column.show)
+            .map((column) => column.key)
+    )
 
     constructor() {}
 
