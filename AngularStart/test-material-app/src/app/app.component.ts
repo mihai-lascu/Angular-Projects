@@ -1,6 +1,6 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, signal, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatTableDataSource, MatTableModule } from "@angular/material/table";
+import { MatTableDataSource } from "@angular/material/table";
 import { MatSort, MatSortModule, Sort } from "@angular/material/sort";
 import { dummyData } from "./table/dummy-data";
 import {
@@ -12,6 +12,8 @@ import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { ColumnDefinition, TableComponent } from "./table/table.component";
+import { JsonPipe } from "@angular/common";
+import { QuantityCellComponent } from "./cells/quantity-cell/quantity-cell.component";
 
 @Component({
     selector: 'app-root',
@@ -20,25 +22,58 @@ import { ColumnDefinition, TableComponent } from "./table/table.component";
         RouterOutlet,
         MatFormFieldModule,
         MatInputModule,
-        MatTableModule,
         MatSortModule,
         MatPaginatorModule,
         MatCardModule,
-        TableComponent
+        TableComponent,
+        JsonPipe,
+        QuantityCellComponent
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
 export class AppComponent {
-    @ViewChild(MatPaginator) paginator: MatPaginator;
-    @ViewChild(MatSort) sort: MatSort;
-    columns: ColumnDefinition[] = [
-        {key: 'id', name: 'Id', show: true, isTemplate: false},
-        {key: 'product', name: 'Product', show: false, isTemplate: false},
-        {key: 'manufacturers', name: 'Manufacturers', show: true, isTemplate: true},
-        {key: 'quantity', name: 'Quantity', show: true, isTemplate: false},
-    ];
-    dataSource = new MatTableDataSource(dummyData);
+    paginator = viewChild.required(MatPaginator);
+    sort = viewChild.required(MatSort);
+    columns = signal<ColumnDefinition[]>([
+        {
+            key: 'id',
+            name: 'Id',
+            show: true,
+            isTemplate: false,
+            tooltipText: 'This is a tooltip about the id'
+        },
+        {
+            key: 'product',
+            name: 'Product',
+            show: true,
+            isTemplate: false,
+            tooltipText: 'Product tooltip',
+            pipeFn: (product) => product?.productNames?.join(', ') || ''
+        },
+        {
+            key: 'manufacturers',
+            name: 'Manufacturers',
+            show: true,
+            isTemplate: true,
+            tooltipText: 'This column doesn\'t have a pipeFn'
+        },
+        {
+            key: 'quantity',
+            name: 'Quantity',
+            show: true,
+            isTemplate: true,
+            tooltipText: 'No tooltip',
+            pipeFn: (quantity) => {
+                if (quantity?.value) {
+                    return quantity?.value + ' ' + quantity?.uom?.name;
+                } else {
+                    return quantity;
+                }
+            }
+        },
+    ]);
+    dataSource = signal(new MatTableDataSource(dummyData));
 
     constructor() {}
 

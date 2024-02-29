@@ -1,49 +1,47 @@
 import {
-    AfterContentInit,
     Component,
     computed,
-    ContentChild,
-    ContentChildren,
+    contentChild,
     input,
-    QueryList, TemplateRef,
-    ViewChild,
+    TemplateRef,
+    viewChild,
 } from '@angular/core';
 import {
-    MatColumnDef,
-    MatHeaderRowDef,
-    MatNoDataRow,
-    MatRowDef,
     MatTable,
     MatTableDataSource,
     MatTableModule
 } from "@angular/material/table";
 import { MatSortModule } from "@angular/material/sort";
 import { CommonModule } from "@angular/common";
+import { FunctionPipe } from "../pipes/function.pipe";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 export type ColumnDefinition = {
     key: string;
     name: string;
     show: boolean;
     isTemplate: boolean;
-    pipeFn?: () => {}
+    tooltipText?: string;
+    css?: string[];
+    pipeFn?: (element: any) => any;
 };
 
 @Component({
     selector: 'app-table',
     standalone: true,
-    imports: [ MatTableModule, MatSortModule, CommonModule ],
+    imports: [
+        MatTableModule,
+        MatSortModule,
+        CommonModule,
+        FunctionPipe,
+        MatTooltipModule
+    ],
     templateUrl: './table.component.html',
     styleUrl: './table.component.scss'
 })
-export class TableComponent<T> implements AfterContentInit {
-    @ContentChildren(MatHeaderRowDef) headerRowDefs: QueryList<MatHeaderRowDef>;
-    @ContentChildren(MatRowDef) rowDefs: QueryList<MatRowDef<T>>;
-    @ContentChildren(MatColumnDef) columnDefs: QueryList<MatColumnDef>;
-    @ContentChild(MatNoDataRow) noDataRow: MatNoDataRow;
-
-    @ContentChild(TemplateRef) customTemplate: TemplateRef<any>;
-
-    @ViewChild(MatTable, {static: true}) table: MatTable<T>;
+export class TableComponent<T> {
+    customTemplate = contentChild.required(TemplateRef);
+    table = viewChild.required(MatTable<T>);
 
     dataSource = input.required<MatTableDataSource<T>>();
     columns = input.required<ColumnDefinition[]>();
@@ -52,13 +50,4 @@ export class TableComponent<T> implements AfterContentInit {
             .filter((column) => column.show)
             .map((column) => column.key)
     )
-
-    constructor() {}
-
-    ngAfterContentInit() {
-        this.columnDefs.forEach(columnDef => this.table.addColumnDef(columnDef));
-        this.rowDefs.forEach(rowDef => this.table.addRowDef(rowDef));
-        this.headerRowDefs.forEach(headerRowDef => this.table.addHeaderRowDef(headerRowDef));
-        this.table.setNoDataRow(this.noDataRow);
-    }
 }

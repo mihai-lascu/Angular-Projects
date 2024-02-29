@@ -38,13 +38,14 @@
         </mat-card>
     </mat-card-content>
     <mat-card-content style="height: 600px">
-        <app-table [columns]="columns" [dataSource]="dataSource" matSort (matSortChange)="sortChanged($event)" [matSortDisableClear]="true">
+        <app-table [columns]="columns()" [dataSource]="dataSource()" matSort (matSortChange)="sortChanged($event)" [matSortDisableClear]="true">
             <ng-template let-element="element" let-column="column">
                 @switch (column.key) {
                     @case ('manufacturers') {
-                        <div>
-                            Sunt amarat
-                        </div>
+                        {{element | json}}
+                    }
+                    @case ('quantity') {
+                        <app-quantity-cell [quantity]="element" [column]="column"/>
                     }
                 }
             </ng-template>

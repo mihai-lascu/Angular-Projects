@@ -2,9 +2,14 @@
     @for (column of columns(); track column.key) {
         @if (column.isTemplate) {
             <ng-container [matColumnDef]="column.key">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>{{column.name}}</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef
+                                 mat-sort-header>
+                    <span [matTooltip]="column.tooltipText || ''" [matTooltipPosition]="'above'">
+                        {{ column.name }}
+                    </span>
+                </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <ng-template [ngTemplateOutlet]="customTemplate" [ngTemplateOutletContext]="{
+                    <ng-template [ngTemplateOutlet]="customTemplate()" [ngTemplateOutletContext]="{
                         element: element[column.key],
                         column: column
                     }"></ng-template>
@@ -12,8 +17,13 @@
             </ng-container>
         } @else {
             <ng-container [matColumnDef]="column.key">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>{{column.name}}</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element[column.key]}}</mat-cell>
+                <mat-header-cell *matHeaderCellDef
+                                 mat-sort-header>
+                    <span [matTooltip]="column.tooltipText || ''" [matTooltipPosition]="'above'">
+                        {{ column.name }}
+                    </span>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{ element[column.key] | function: column.pipeFn }}</mat-cell>
             </ng-container>
         }
     }
