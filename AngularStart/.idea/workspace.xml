@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89d2436f-a899-456f-a426-c784e63230f0" name="Changes" comment="Module 8: Lesson 13">
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/cells/quantity-cell/quantity-cell.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/cells/quantity-cell/quantity-cell.component.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/cells/quantity-cell/quantity-cell.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test-material-app/src/app/pipes/function.pipe.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-material-app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/test-material-app/src/app/app.component.ts" afterDir="false" />
@@ -76,7 +72,7 @@
       <workItem from="1706537751058" duration="166000" />
       <workItem from="1706537974195" duration="764000" />
       <workItem from="1706883143004" duration="15316000" />
-      <workItem from="1708517928694" duration="12286000" />
+      <workItem from="1708517928694" duration="12452000" />
     </task>
     <task id="LOCAL-00001" summary="Module 8: Lesson 2">
       <option name="closed" value="true" />

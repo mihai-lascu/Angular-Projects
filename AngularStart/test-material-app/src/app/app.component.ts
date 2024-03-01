@@ -1,7 +1,7 @@
 import { Component, signal, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatTableDataSource } from "@angular/material/table";
-import { MatSort, MatSortModule, Sort } from "@angular/material/sort";
+import { MatSort, Sort } from "@angular/material/sort";
 import { dummyData } from "./table/dummy-data";
 import {
     MatPaginator,
@@ -14,6 +14,7 @@ import { MatInputModule } from "@angular/material/input";
 import { ColumnDefinition, TableComponent } from "./table/table.component";
 import { JsonPipe } from "@angular/common";
 import { QuantityCellComponent } from "./cells/quantity-cell/quantity-cell.component";
+import { FunctionPipe } from "./pipes/function.pipe";
 
 @Component({
     selector: 'app-root',
@@ -22,12 +23,12 @@ import { QuantityCellComponent } from "./cells/quantity-cell/quantity-cell.compo
         RouterOutlet,
         MatFormFieldModule,
         MatInputModule,
-        MatSortModule,
         MatPaginatorModule,
         MatCardModule,
         TableComponent,
         JsonPipe,
-        QuantityCellComponent
+        QuantityCellComponent,
+        FunctionPipe
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
@@ -56,7 +57,8 @@ export class AppComponent {
             name: 'Manufacturers',
             show: true,
             isTemplate: true,
-            tooltipText: 'This column doesn\'t have a pipeFn'
+            tooltipText: 'This column doesn\'t have a pipeFn',
+            pipeFn: (manufacturers) => manufacturers?.map((manufacturer: any) => manufacturer.name)?.join(', ')
         },
         {
             key: 'quantity',

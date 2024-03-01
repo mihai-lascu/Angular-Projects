@@ -1,9 +1,9 @@
-<mat-table class="mat-elevation-z8" [dataSource]="dataSource()">
-    @for (column of columns(); track column.key) {
+<mat-table [dataSource]="dataSource()" multiTemplateDataRows matSort (matSortChange)="sortChanged.emit($event)"
+           [matSortDisableClear]="true">
+    @for (column of columns(); track column.key; let first = $first) {
         @if (column.isTemplate) {
-            <ng-container [matColumnDef]="column.key">
-                <mat-header-cell *matHeaderCellDef
-                                 mat-sort-header>
+            <ng-container [matColumnDef]="column.key" [sticky]="first">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
                     <span [matTooltip]="column.tooltipText || ''" [matTooltipPosition]="'above'">
                         {{ column.name }}
                     </span>
@@ -12,11 +12,11 @@
                     <ng-template [ngTemplateOutlet]="customTemplate()" [ngTemplateOutletContext]="{
                         element: element[column.key],
                         column: column
-                    }"></ng-template>
+                    }"/>
                 </mat-cell>
             </ng-container>
         } @else {
-            <ng-container [matColumnDef]="column.key">
+            <ng-container [matColumnDef]="column.key" [sticky]="first">
                 <mat-header-cell *matHeaderCellDef
                                  mat-sort-header>
                     <span [matTooltip]="column.tooltipText || ''" [matTooltipPosition]="'above'">
@@ -27,8 +27,42 @@
             </ng-container>
         }
     }
-    <mat-header-row *matHeaderRowDef="columnsToDisplay(); sticky: true"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnsToDisplay();"></mat-row>
+
+    <mat-header-row *matHeaderRowDef="isMobile() ? columnsToDisplayWithExpand() : columnsToDisplay(); sticky: true"/>
+    <mat-row *matRowDef="let element; columns: isMobile() ? columnsToDisplayWithExpand() : columnsToDisplay();"
+             class="example-element-row"
+             [class.example-expanded-row]="expandedElement() === element"
+             (click)="expandedElement.set(expandedElement() === element ? null : element)"/>
+
+    @if (isMobile()) {
+        <ng-container matColumnDef="expand">
+            <mat-header-cell *matHeaderCellDef>&nbsp;</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <button mat-icon-button (click)="(expandedElement.set(expandedElement() === element ? null : element)); $event.stopPropagation()">
+                    @if (expandedElement() === element) {
+                        <mat-icon>keyboard_arrow_up</mat-icon>
+                    } @else {
+                        <mat-icon>keyboard_arrow_down</mat-icon>
+                    }
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="expandedDetail">
+            <mat-cell *matCellDef="let element">
+                <div class="example-element-detail" [@detailExpand]="element == expandedElement() ? 'expanded' : 'collapsed'">
+                    @for (column of columns(); track column.key) {
+                        <li>
+                            <span>{{ column.name }}: </span>
+                            <span>{{ element[column.key] | function: column.pipeFn }}</span>
+                        </li>
+                    }
+                </div>
+            </mat-cell>
+        </ng-container>
+
+        <mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"/>
+    }
 
     <div *matNoDataRow class="no-data-row">No data.</div>
 </mat-table>
